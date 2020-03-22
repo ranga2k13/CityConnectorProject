@@ -32,6 +32,4 @@ public class ExceptionsController extends ResponseEntityExceptionHandler {
 			NoHandlerFoundException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
 		return new ResponseEntity<>(ex.getMessage(), status);
 	}
-	
-
 }

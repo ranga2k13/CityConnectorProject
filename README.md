@@ -2,38 +2,14 @@
 
 Spring Boot application enabling client to determine if two cities are connected.
 
-Two cities are considered connected if there’s a series of roads that can be traveled from one city to another. The list of roads is available in the city.txt file in src/main/resources. File contains a list of city pairs (one pair per line, comma separated), which indicates that there’s a road between those cities.
+Two cities are considered connected if there’s a series of roads that can be traveled from one city to another. The list of roads is available in the city.txt file in src/main/resources/data. File contains a list of city pairs (one pair per line, comma separated), which indicates that there’s a road between those cities.
 
+It will be deployed as a spring-boot app and expose one endpoint: http://localhost:8080/connected?origin=city1&amp;destination=city2. The resonse will be 'yes' if city1 is connected to city2, or 'no' if city1 is not connected to city2. Any unexpected input will result in a 'no' response.</p>
+<p>Example: city.txt content is: Boston, New York Philadelphia, Newark Newark, Boston Trenton, Albany</p>
+<p>http://localhost:8080/connected?origin=Boston&amp;destination=Newark Should return yes</p>
+<p>http://localhost:8080/connected?origin=Boston&amp;destination=Philadelphia Should return yes</p>
+<p>http://localhost:8080/connected?origin=Philadelphia&amp;destination=Albany Should return no</p>	
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
 
@@ -41,10 +17,10 @@ Explain how to run the automated tests for this system
 
 ### Break down into end to end tests
 
-Explain what these tests test and why
+Unit Test
 
 ```
-Give an example
+CityConnectorApplicationTests
 ```
 
 ### And coding style tests
@@ -59,21 +35,20 @@ Give an example
 
 Add additional notes about how to deploy this on a live system
 
-## Built With
+## Built From Source
+```
+ mvn clean install
+```
 
-* [Maven](https://maven.apache.org/) - Dependency Management
+## Run the application
+Using maven Spring Boot plugin
 
-## Contributing
+```
+mvn spring-boot:run
+```
+Using Java command line
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Ranga** - *Initial work* - [ConnectedCities](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+```
+ java -jar target/transit-0.0.1.jar
+```
 

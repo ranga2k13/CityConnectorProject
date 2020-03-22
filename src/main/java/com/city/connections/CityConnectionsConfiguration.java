@@ -8,6 +8,8 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Bean;
@@ -18,8 +20,7 @@ import org.springframework.core.io.ResourceLoader;
 
 import com.city.connections.common.Constants;
 import com.city.connections.model.Connections;
-import com.sun.org.slf4j.internal.Logger;
-import com.sun.org.slf4j.internal.LoggerFactory;
+
 
 /**
  * City Connections configuration class used to load 
