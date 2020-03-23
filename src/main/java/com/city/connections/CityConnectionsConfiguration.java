@@ -54,7 +54,7 @@ public class CityConnectionsConfiguration {
 	 */
 	public Connections getCityConnections() {		
 		Map<String, Set<String>> cities = new HashMap<>();
-		String[] cityLineArry = new String[2];
+		String[] cityLineArray = new String[2];
 		InputStream inputStream = null;		
 		Resource resource = resourceLoader.getResource(Constants.FILE_NAME);
 		Connections cg = new Connections();
@@ -69,9 +69,9 @@ public class CityConnectionsConfiguration {
         
         // Read file and store city connection into map
 		while (scan.hasNext()) {
-			cityLineArry = scan.nextLine().toLowerCase().split(",");
-			String city1 = cityLineArry[0].trim();
-			String city2 = cityLineArry[1].trim();
+			cityLineArray = scan.nextLine().toLowerCase().split(",");
+			String city1 = cityLineArray[0].trim();
+			String city2 = cityLineArray[1].trim();
 			
 			// Set the city and its connecting city in CityGraph
 			if(cities.containsKey(city1)) {

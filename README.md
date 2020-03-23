@@ -11,6 +11,13 @@ It will be deployed as a spring-boot app and expose one endpoint: http://localho
 <p>http://localhost:8080/connected?origin=Philadelphia&amp;destination=Albany Should return no</p>	
 
 
+## Tools you will need
+
+JDK 1.8+</br>
+Maven 3.0+ is your build tool</br>
+Your favorite IDE.</br>
+
+
 ## Running the tests
 
 Explain how to run the automated tests for this system
@@ -23,21 +30,27 @@ Unit Test
 CityConnectorApplicationTests
 ```
 
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
 ## Deployment
 
 Add additional notes about how to deploy this on a live system
 
 ## Built From Source
+
+The wrapper should work with different operating systems such as:
+
+Linux
+Windows
+
+We can run our goals like this for the Unix system:
+
 ```
- mvn clean install
+1  ./mvnw clean install
+```
+
+And the following command for Batch:
+
+```
+1  ./mvnw.cmd clean install
 ```
 
 ## Run the application
@@ -49,6 +62,12 @@ mvn spring-boot:run
 Using Java command line
 
 ```
- java -jar target/transit-0.0.1.jar
+ java -jar target/CityConnectorProject-0.0.1-SNAPSHOT.jar
+```
+
+Using Spring-Boot project
+
+```
+./mvnw spring-boot:run
 ```
 

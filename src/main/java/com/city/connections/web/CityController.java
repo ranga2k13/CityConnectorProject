@@ -2,6 +2,7 @@ package com.city.connections.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,6 +15,7 @@ import com.city.connections.service.CityService;
  *
  */
 @RestController
+@RequestMapping("/connected")
 public class CityController {
 	
 	@Autowired
@@ -26,7 +28,7 @@ public class CityController {
 	 * @param destination
 	 * @return String (values either yes or no)
 	 */
-	@GetMapping(value = "/connected")
+	@GetMapping	
 	public String getCheckConnectedCities(
 			@RequestParam(value="origin", required=true) String origin, 
 			@RequestParam(value="destination", required=true) String destination

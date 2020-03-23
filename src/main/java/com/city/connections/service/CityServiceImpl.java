@@ -34,32 +34,37 @@ public class CityServiceImpl implements CityService {
 	 */
 	@Override
 	public String connectedCities(String origin, String destination) {
+
+		// Change origin & destination toLowerCase to ignore case
+		String originStr = origin.toLowerCase();
+		String destinationStr = destination.toLowerCase();
+
 		// set of cities that were visited
 		Set<String> visited = new HashSet<>();
 		// map of cities and its connections
 		Map<String, Set<String>> cities = connections.getCities();		
 		
-		if(!cities.containsKey(origin.toLowerCase()) || !cities.containsKey(destination.toLowerCase()) ) {
+		if(!cities.containsKey(originStr) || !cities.containsKey(destinationStr) ) {
 			return CITY_IS_NOT_CONNECTED;
 		}
 		
 		// Queue used to contain cities to visit
 		Queue<String> queue = new LinkedList<>();
-		queue.add(origin.toLowerCase());
-		
+		queue.add(originStr);
+	
 		while(!queue.isEmpty()) {
-			String city = queue.poll();
-						
+			String city = queue.poll();			
+			
 			if(visited.contains(city))
 				continue;
 			
-			visited.add(city);
-			
+			visited.add(city);			
 			// Adjacent city connections
 			Set<String> adjCities = cities.get(city);
-					
+			//System.err.println("*****************************");
+			//System.err.println(queue);
 			for(String adjCity : adjCities) {
-				if(adjCity.equalsIgnoreCase(destination))
+				if(adjCity.equals(destinationStr))
 					return CITY_IS_CONNECTED;
 				
 				// push adjacent city into queue
@@ -67,8 +72,7 @@ public class CityServiceImpl implements CityService {
 					queue.add(adjCity);
 			}
 		}
-		
-		return CITY_IS_NOT_CONNECTED;
-	}
 
+		return CITY_IS_NOT_CONNECTED;
+	}	
 }
