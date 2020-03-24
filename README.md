@@ -15,22 +15,22 @@ result in 'no' response.</p>
 <p>http://localhost:8080/connected?origin=Philadelphia&amp;destination=Albany Should return no</p>	
 
 
-#### Tool & Technologies Used
+### Tool & Technologies Used
 
 JDK 1.8</br>
 Spring Boot v2.2.5</br>
 Maven 3.0+ </br>
 Eclipse IDE.</br>
 
-#### Built From Source
+### Built From Source
 The below are the various option to build this application
 
-#####Maven commandline to build source
+##### Maven commandline to build source
 ```
 mvn clean install
 ```
 
-#####Maven Wrapper to build source
+##### Maven Wrapper to build source
 The maven wrapper files are automatically created when the spring-boot-starter-web project created from eclipse.  This will help us to leverage to build this application.
 
 The wrapper should work with different operating systems such as:
@@ -51,19 +51,19 @@ And the following command for windows Batch:
 mvnw.cmd clean install
 ```
 
-#### Run the application
-######Using maven Spring Boot plugin
+### Run the application
+###### Using maven Spring Boot plugin
 
 ```
 mvn spring-boot:run
 ```
-#####Using Java command line
+##### Using Java command line
 
 ```
  java -jar target/CityConnectorProject-0.0.1-SNAPSHOT.jar
 ```
 
-#####Using Maven Wrapper Spring-Boot project
+##### Using Maven Wrapper Spring-Boot project
 
 In Linux/Unix environment
 
@@ -77,7 +77,7 @@ In Windows
 mvnw.cmd spring-boot:run
 ```
 
-#### Unit Tests
+### Unit Tests
 The below are the unit test cases
 
 ```
