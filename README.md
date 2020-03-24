@@ -12,8 +12,9 @@ result in 'no' response.</p>
 <p>Example: city.txt content is: Boston, New York Philadelphia, Newark Newark, Boston Trenton, Albany</p>
 <p>http://localhost:8080/connected?origin=Boston&amp;destination=Newark Should return yes</p>
 <p>http://localhost:8080/connected?origin=Boston&amp;destination=Philadelphia Should return yes</p>
-<p>http://localhost:8080/connected?origin=Philadelphia&amp;destination=Albany Should return no</p>	
+<p>http://localhost:8080/connected?origin=Philadelphia&amp;destination=Albany Should return no</p>
 
+There would be more test city connection scenario covered as part the application test.
 
 ### Tool & Technologies Used
 
