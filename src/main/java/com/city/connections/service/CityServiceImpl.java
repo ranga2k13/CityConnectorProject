@@ -29,6 +29,7 @@ public class CityServiceImpl implements CityService {
 	 * 
 	 * @param origin
 	 * @param destination
+	 * @return 
 	 * @return Either yes or no
 	 * 
 	 */
@@ -44,7 +45,7 @@ public class CityServiceImpl implements CityService {
 		// map of cities and its connections
 		Map<String, Set<String>> cities = connections.getCities();		
 		
-		if(!cities.containsKey(originStr) || !cities.containsKey(destinationStr) ) {
+		if(!cities.containsKey(originStr) || !cities.containsKey(destinationStr)) {
 			return CITY_IS_NOT_CONNECTED;
 		}
 		
@@ -58,11 +59,10 @@ public class CityServiceImpl implements CityService {
 			if(visited.contains(city))
 				continue;
 			
-			visited.add(city);			
+			visited.add(city);
 			// Adjacent city connections
 			Set<String> adjCities = cities.get(city);
-			//System.err.println("*****************************");
-			//System.err.println(queue);
+						
 			for(String adjCity : adjCities) {
 				if(adjCity.equals(destinationStr))
 					return CITY_IS_CONNECTED;

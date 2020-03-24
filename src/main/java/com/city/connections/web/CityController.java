@@ -32,10 +32,7 @@ public class CityController {
 	public String getCheckConnectedCities(
 			@RequestParam(value="origin", required=true) String origin, 
 			@RequestParam(value="destination", required=true) String destination
-			) {
-		
-		return service.connectedCities(origin, destination);
-		
-	}
-	
+			) {		
+		return service.connectedCities(origin, destination);		
+	}	
 }

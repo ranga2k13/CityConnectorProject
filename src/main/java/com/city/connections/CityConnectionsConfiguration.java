@@ -38,33 +38,30 @@ public class CityConnectionsConfiguration {
 	public final Logger LOGGER = LoggerFactory.getLogger(CityConnectionsConfiguration.class);
 
 	private Scanner scan;
-	
-	
-	@Bean
-	@Scope(value = ConfigurableBeanFactory.SCOPE_SINGLETON)
+		
 	
 	/**
 	 * Bean representation of CityGraph. It reads file city.txt in 
-	 * src/main/resource classpath and loads all city connections 
+	 * src/main/resource/data classpath and loads all city connections 
 	 * into a CityGraph object. The CityGraph object can be 
 	 * used by any class wiring this object.
 	 * 
-	 * @return CityGraph
-	 * 
+	 * @return Connections the CityGraph
 	 */
+	@Bean
+	@Scope(value = ConfigurableBeanFactory.SCOPE_SINGLETON)
 	public Connections getCityConnections() {		
 		Map<String, Set<String>> cities = new HashMap<>();
 		String[] cityLineArray = new String[2];
 		InputStream inputStream = null;		
 		Resource resource = resourceLoader.getResource(Constants.FILE_NAME);
-		Connections cg = new Connections();
+		Connections cityGraph = new Connections();
 		
 		try {
 			inputStream = resource.getInputStream();	
 			scan = new Scanner(inputStream);
 		}catch(IOException e) {
-			LOGGER.error("Exception Occured in CityConnectionsConfiguration class");
-			scan.close();
+			LOGGER.error("Exception in CityConnectionsConfiguration class");			
 		}
         
         // Read file and store city connection into map
@@ -90,9 +87,9 @@ public class CityConnectionsConfiguration {
 				cities.put(city2, adjCity);
 			}
 		}
-		cg.setCities(cities);		
+		cityGraph.setCities(cities);		
 		scan.close();
-		return cg;
+		return cityGraph;
 	}
 
 }
