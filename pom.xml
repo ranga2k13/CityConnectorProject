@@ -12,7 +12,7 @@
 	<artifactId>CityConnectorProject</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>CityConnectorProject</name>
-	<description>Spring Book City Road Connection Project</description>
+	<description>Spring Boot City Connection Project</description>
 
 	<properties>
 		<java.version>1.8</java.version>

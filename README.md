@@ -22,7 +22,7 @@ Spring Boot v2.2.5</br>
 Maven 3.0+ </br>
 Eclipse IDE.</br>
 
-### Built From Source
+### Build From Source
 The below are the various option to build this application
 
 ##### Maven commandline to build source
