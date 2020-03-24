@@ -112,9 +112,9 @@ For Instance,
 
 (or) 
 
-using the Maven Wrapper
+Using the Maven Wrapper
 
-in Linux/Unix Environment
+In Linux/Unix Environment
 
 ```
 ./mvnw test
@@ -128,7 +128,7 @@ For Instance,
      ./mvnw -Dtest=CityConnectorApplicationTests test
 ```
 
-in Windows Environment
+In Windows Environment
 
 ```
 mvnw.cmd test
