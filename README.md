@@ -110,6 +110,35 @@ For Instance,
      mvn -Dtest=CityConnectorApplicationTests test
 ```
 
+(or) 
 
+using the Maven Wrapper
 
+in Linux/Unix Environment
+
+```
+./mvnw test
+```
+To run a specific test,
+
+```
+./mvnw -Dtest=<test-class> test
+
+For Instance,
+     ./mvnw -Dtest=CityConnectorApplicationTests test
+```
+
+in Windows Environment
+
+```
+mvnw.cmd test
+```
+To run a specific test,
+
+```
+mvnw.cmd -Dtest=<test-class> test
+
+For Instance,
+     mvnw.cmd -Dtest=CityConnectorApplicationTests test
+```
 
