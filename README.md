@@ -1,6 +1,6 @@
 ## Connected Cities
 
-#### Introduction
+### Introduction
 This Spring Boot application enabling client to determine if two cities are connected.
 
 The two cities are considered connected if there’s a series of roads that can be traveled from one city to another. The list of roads is available in the city.txt file in src/main/resources/data.
