@@ -8,8 +8,8 @@ package com.city.connections.service;
  */
 public interface CityService {
 	
-	static String CITY_IS_CONNECTED = "yes";
-	static String CITY_IS_NOT_CONNECTED = "no";
+	String CITY_IS_CONNECTED = "yes";
+	String CITY_IS_NOT_CONNECTED = "no";
 	
 	/**
 	 * Returns 'yes' if cities are connected 
